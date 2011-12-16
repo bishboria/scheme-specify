@@ -11,4 +11,6 @@
 (specify
   (fact #f #t)
   (fact #t (< 1 2))
-  (fact #t (< 2 1)))
+  (fact #t (< 2 1))
+  (fact 3 (+ 2 2))
+  (fact 2 (sqrt 4)))
