@@ -1,5 +1,5 @@
 (define (specify . facts)
-  (map (lambda (x) x) facts))
+  facts)
 
 (define-syntax fact 
   (syntax-rules ()
