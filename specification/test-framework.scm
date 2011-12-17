@@ -20,4 +20,7 @@
 	(specify
 	  (fact #t (= 1 2))
 	  (fact #t #t)
-	  (fact #t (= 1 1)))))
+	  (fact #t (= 1 1))))
+  (fact (list '(expected b to be a but is b))
+	(specify
+	  (fact 'a 'b))))

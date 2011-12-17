@@ -12,4 +12,4 @@
 		((fact e a)
 		 (if (equal? e a)
 		   '.
-		   (list 'expected 'a 'to 'be e 'but 'is a)))))
+		   (list 'expected (if (symbol? a) a 'a) 'to 'be e 'but 'is a)))))
