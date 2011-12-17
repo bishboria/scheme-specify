@@ -23,7 +23,7 @@
 	(list '. '. '(expected (= 1 2) to be #t but is #f)))
   (fact (specify
 	  (fact 'b 'a))
-	(list '(expected b to be a but is b)))
+	'((expected b to be a but is b)))
   (fact (specify
 	  (fact '(c d) '(a b)))
-	(list '(expected (quote (c d)) to be (a b) but is (c d)))))
+	'((expected (quote (c d)) to be (a b) but is (c d)))))
