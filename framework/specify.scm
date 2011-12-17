@@ -1,15 +1,13 @@
 (define (specify . facts)
+  (define (correct? fact)
+    (if (equal? fact '.)
+      #t
+      #f))
+  (define (incorrect? fact)
+    (not (correct? fact)))
   (let ((correct (filter correct? facts))
 	(incorrect (filter incorrect? facts)))
     (append correct incorrect)))
-
-(define (correct? fact)
-  (if (equal? fact '.)
-    #t
-    #f))
-
-(define (incorrect? fact)
-  (not (correct? fact)))
 
 (define-syntax fact 
   (syntax-rules ()
