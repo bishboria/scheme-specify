@@ -11,7 +11,7 @@
 
 (define-syntax fact 
   (syntax-rules ()
-		((delay e a)
+		((fact e a)
 		 (if (equal? e a)
 		   '.
 		   (list 'expected 'a 'to 'be e 'but 'is a)))))
