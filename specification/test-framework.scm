@@ -4,9 +4,11 @@
   (fact #t #t)
   (fact #t (= 1 1))
   (fact 3 (+ 1 2))
-  (fact #t (< 1 2))
-  (fact #t (< 2 1))
   (fact #t (> 2 1))
+  (fact #t (< 1 2)))
+
+(specify
+  (fact #t (< 2 1))
   (fact 3 (sqrt 4)))
 
 (specify
