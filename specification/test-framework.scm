@@ -26,4 +26,4 @@
 	(list '(expected b to be a but is b)))
   (fact (specify
 	  (fact '(c d) '(a b)))
-	(list '(expected (c d) to be (a b) but is (c d)))))
+	(list '(expected (quote (c d)) to be (a b) but is (c d)))))
