@@ -23,4 +23,7 @@
 	  (fact #t (= 1 1))))
   (fact (list '(expected b to be a but is b))
 	(specify
-	  (fact 'a 'b))))
+	  (fact 'a 'b)))
+  (fact (list '(expected (c d) to be (a b) but is (c d)))
+	(specify
+	  (fact '(a b) '(c d)))))
