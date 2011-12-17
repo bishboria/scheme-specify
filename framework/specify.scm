@@ -1,8 +1,6 @@
 (define (specify . facts)
   (define (correct? fact)
-    (if (equal? fact '.)
-      #t
-      #f))
+    (equal? fact '.))
   (define (incorrect? fact)
     (not (correct? fact)))
   (let ((correct (filter correct? facts))
