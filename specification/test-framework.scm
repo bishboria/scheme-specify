@@ -18,6 +18,4 @@
 	(specify
 	  (fact #t (= 1 2))
 	  (fact #t #t)
-	  (fact #t (= 1 1))))
-  (fact #t (correct? '.))
-  (fact #f (correct? '(expected (= 1 2) to be #t but is #f))))
+	  (fact #t (= 1 1)))))
