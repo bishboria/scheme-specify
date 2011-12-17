@@ -9,8 +9,8 @@
 
 (define-syntax fact 
   (syntax-rules ()
-		((fact e a)
-		 (if (equal? e a)
+		((fact a e)
+		 (if (equal? a e)
 		   '.
 		   (list 'expected (if (or (list? a)
 					   (symbol? a))

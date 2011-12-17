@@ -1,29 +1,29 @@
 (load "framework/specify.scm")
 
 (specify
-  (fact #t #t)
-  (fact #t (= 1 1))
-  (fact 3 (+ 1 2))
-  (fact #t (> 2 1))
-  (fact #t (< 1 2)))
+  (fact (= 1 1) #t)
+  (fact (> 2 1) #t)
+  (fact (< 1 2) #t)
+  (fact (+ 1 2) 3)
+  (fact #t #t))
 
 (specify
-  (fact #t (< 2 1))
-  (fact 3 (sqrt 4)))
+  (fact (< 2 1) #t)
+  (fact (sqrt 4) 3))
 
 (specify
-  (fact (list '. '(expected (= 1 2) to be #t but is #f))
-	(specify
-	  (fact #t (= 1 1))
-	  (fact #t (= 1 2))))
-  (fact (list '. '. '(expected (= 1 2) to be #t but is #f))
-	(specify
-	  (fact #t (= 1 2))
-	  (fact #t #t)
-	  (fact #t (= 1 1))))
-  (fact (list '(expected b to be a but is b))
-	(specify
-	  (fact 'a 'b)))
-  (fact (list '(expected (c d) to be (a b) but is (c d)))
-	(specify
-	  (fact '(a b) '(c d)))))
+  (fact (specify
+	  (fact (= 1 1) #t)
+	  (fact (= 1 2) #t))
+	(list '. '(expected (= 1 2) to be #t but is #f)))
+  (fact (specify
+	  (fact (= 1 2) #t)
+	  (fact (= 1 1) #t)
+	  (fact #t #t))
+	(list '. '. '(expected (= 1 2) to be #t but is #f)))
+  (fact (specify
+	  (fact 'b 'a))
+	(list '(expected b to be a but is b)))
+  (fact (specify
+	  (fact '(c d) '(a b)))
+	(list '(expected (c d) to be (a b) but is (c d)))))
